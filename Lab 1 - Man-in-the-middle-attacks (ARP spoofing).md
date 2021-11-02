@@ -1,6 +1,6 @@
 # Lab 1 - Man-in-the-middle-attacks (ARP spoofing)
 
-Na ovoj vježbi izveli smo man in the middle napad u virtualiziranoj mreži koju čine 3 Docker računala: evil-station (IP adresa 172.20.04), station 1 (IP adresa 172.20.04) i station 2 (IP adresa 172.20.04). Obavljamo **pasivni napad,** tj. evil-station, koji predstavlja napadača, prisluškuje promet između stationa 1 i 2. Komunikaciju između stationa 1 i 2 omogućava program netcat**.**
+Na ovoj vježbi izveli smo man in the middle napad u virtualiziranoj mreži koju čine 3 Docker računala: evil-station (IP adresa 172.20.04), station 1 (IP adresa 172.20.04) i station 2 (IP adresa 172.20.04). Obavljamo **pasivni napad,** tj. evil-station, koji predstavlja napadača, prisluškuje promet između stationa 1 i 2. Komunikaciju između stationa 1 i 2 omogućava program netcat.
 
 Na station 2 koristimo komandu `netcat -l -p 8000` kako bi station 2 slušao na portu 8000, tako da se station 2 ovdje ponaša kao server. Station 1 je klijent i povezuje se na station 2 s `netcat station-2 8000`. Ovime je ostvarena komunikacija među računalima, tekst napisan na jednom računalu može se vidjeti na drugom. 
 
