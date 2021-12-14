@@ -1,7 +1,7 @@
-#Lab 2 - Symmetric key cryptography - a crypto challenge
+# Lab 2 - Symmetric key cryptography - a crypto challenge
 
-Za početak stvaramo virtualno python okruženje u kojem ćemo raditi i skriptu brute_force.py.
-Cilj vježbe je pronaći file čije ime je nastalo hashiranjem našeg imena te ga zatim dekriptirati. Prvo pronalazimo ime filea.
+Cilj vježbe je pronaći file čije ime je nastalo hashiranjem našeg imena te ga zatim dekriptirati.
+Za početak stvaramo virtualno python okruženje u kojem ćemo raditi i skriptu brute_force.py. Prvo pronalazimo ime filea.
 To radimo pomoću funkcije koja hashira dani input na isti način kako je hashirano ime filea. Hashiramo svoje ime i pronađemo file čije ime je jednako dobivenom hashu.
 
 ```python
@@ -40,7 +40,7 @@ def test_png(header):
 ```
 
 Slijedi dekripcija filea brute_force pristupom tako da u beskonačnoj petlji stvaramo nove ključeve koristeći brojač iteracija
-ctr i pokušavamo svakim ključem dekriptirati naš file. Jedino ako je ključ ispravan rezultat dekripcije (plaintext)je slika formata .png, koju spremamo kao BINGO.txt i time je zadatak obavljen.
+ctr i pokušavamo svakim ključem dekriptirati naš file. Jedino ako je ključ ispravan rezultat dekripcije (plaintext)je slika formata .png, koju spremamo kao BINGO.txt, izlazimo iz petlje i time je zadatak obavljen.
 
 ```python
 def brute force():
@@ -49,7 +49,7 @@ def brute force():
     with open(filename, "rb") as file:
         ciphertext = file.read()
     while True:
-        key_bytes = ctr.to_bytes(32, "big")
+    	key_bytes = ctr.to_bytes(32, "big")
         key = base64.urlsafe_b64encode(key_bytes)
 		if not (ctr + 1) % 1000:
 			print(f"[*] Keys tested: {ctr +1:,}", end = "\r")
@@ -64,5 +64,5 @@ def brute force():
 		except Exception:
 			pass
 
-        ctr +=1
+        	ctr +=1
 ```
