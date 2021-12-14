@@ -58,7 +58,7 @@ if __name__ == "__main__":
 ## Izazov 2
 
 U 2. izazovu treba odrediti pravilan vremenski redoslijed i integritet transakcija sa odgovarujućim dionicama.
-Iteriramo kroz fileove i provjeravamo ispravnost MAC-a za svaki od njih. Funkcija verify_MAC je ist kao u 1. izazovu.
+Iteriramo kroz fileove i provjeravamo ispravnost MAC-a za svaki od njih. Funkcija verify_MAC je ista kao u 1. izazovu.
 
 ```python
 if __name__ == "__main__":
