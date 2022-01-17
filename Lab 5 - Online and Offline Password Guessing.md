@@ -48,7 +48,13 @@ Konačno je pronađena lozinka za moj container, byllyt, i sada se mogu prijavit
 ## Offline Password Guessing
 
 U /etc/shadow su hashevi lozinki. Željeni hash spremamo u hash.txt. Pokušamo pronaći lozinku pomoću 
-```hashcat --force -m 1800 -a 3 hash.txt ?l?l?l?l?l?l --status --status-timer 10```, ali vidimo da bi na ovaj način trebalo bi previše vremena, pa koristimo
+```
+hashcat --force -m 1800 -a 3 hash.txt ?l?l?l?l?l?l --status --status-timer 10
+```
+, ali vidimo da bi na ovaj način trebalo bi previše vremena, pa koristimo
 lokalni dictionary. 
-```hashcat --force -m 1800 -a 0 hash.txt dictionary/g5/dictionary_offline.txt --status --status-timer 10```.
+```
+hashcat --force -m 1800 -a 0 hash.txt dictionary/g5/dictionary_offline.txt --status --status-timer 10
+```
+
 Nakon nekog vremena hashcat pronalazi traženu lozinku.
