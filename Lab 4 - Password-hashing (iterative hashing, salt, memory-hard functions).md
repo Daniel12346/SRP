@@ -2,6 +2,7 @@
 
 Cilj ove vježbe je razumijeti pojmove spore ili brze funkcije, proučiti i usporediti brzine izvođenja nekih kriptografskih hash funkcija te naučiti
 što su memory-hard funkcije i pokazati primjer takve funkcije.
+Radimo u virtualnom python okruženju.
 
 Kod sa kojim započinjemo vježbu je: 
 
