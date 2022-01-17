@@ -2,9 +2,9 @@
 
  Alati koji nam trebaju za ovu vježbu su nmap, hydra i hashcat. 
  Osnovne informacije o nmap-u možemo saznati komandom whatis.
- ``` whatis nmap
+ ``whatis nmap
 nmap (1)             - Network exploration tool and security / port scanner
-```
+``
 
 ## Online Password Guessing
 
