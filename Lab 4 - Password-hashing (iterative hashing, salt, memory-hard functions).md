@@ -216,7 +216,7 @@ TESTS = [
             "service": lambda: linux_hash(password, rounds=10**5, measure=True)
         }
     ]
-    ```
+ ```
  Konačne tablice koje dobijemo su:
  
 +-----------------+----------------------+
