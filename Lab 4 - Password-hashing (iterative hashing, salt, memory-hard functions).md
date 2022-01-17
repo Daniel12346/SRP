@@ -248,7 +248,7 @@ TESTS = [
  Isto tako vidimo da brzina ovisi o broju roundova soli(salt); što više roundova to je dobiveni hash sigurniji ali hash funkcija je sporija.
  
  Dobiveni hash ovisi o vrijednosti soli. Budući da je sol koju koristimo u linux_hash nasumična (random), hashevi iste lozinke se razlikuju.
- Pozivamo ```python linux_hash(password)``` dva puta. Prvi put dobijemo hash vrijednost 
+ Pozivamo ```linux_hash(password)``` dva puta. Prvi put dobijemo hash vrijednost 
  $6$fvSBSBRAOlDUDp3l$dYwMq27wFDYTvqktXsqR8w1xgxjcdEI7.CVutpywvG7x0XIdWhZQlFOvcBy1Hlq/w8DkfDbRS72nNxWWfe9PT, 
  a drugi put $6$hNpZaLYFIKqOe5bA$z15D8w202W48mn6dCah4gjfCfBlAddk89UnoAHL1hKsiLkEcZ8FkzG.V24iNrh8oc5Any2uOjed3gvqMFy5oy0. 
  Dio hasha koji predstavlja sol je fvSBSBRAOlDUDp3l. Ako pozovemo linux_hash više puta s istom lozinkom i uvijek uz istu ovu sol, rezultat je
