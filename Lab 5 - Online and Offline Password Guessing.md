@@ -6,7 +6,8 @@
 nmap (1)             - Network exploration tool and security / port scanner
 ```
 Koristimo nmap na lokalnoj mreži: 
-``` nmap -v 10.0.15.0/28
+``` 
+nmap -v 10.0.15.0/28
 ```
 Nmap skenira dostupna računala i traži otvorene portove.
 Na http://a507-server.local/ pronalazim docker container koji mi pripada. Njegov username je vrandecic_daniel, a IP adresa 10.0.15.0. Ne mogu se povezati
