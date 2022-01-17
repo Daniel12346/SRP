@@ -218,7 +218,7 @@ TESTS = [
     ]
  ```
  Konačne tablice koje dobijemo su:
- 
+ `
 +-----------------+----------------------+
 | Function        | Avg. Time (100 runs) |
 +-----------------+----------------------+
@@ -241,6 +241,7 @@ TESTS = [
 | Linux CRYPT 50k  |       0.063273       |
 | Linux CRYPT 100k |       0.126419       |
 +------------------+----------------------+
+`
     
  Iz njih možemo vidjeti da je HASH_SHA256 najbrža a Linux CRYPT 100k najsporija od ovih hash funkcija. 
  Isto tako vidimo da brzina ovisi o broju roundova soli(salt); što više roundova to je dobiveni hash sigurniji ali hash funkcija je sporija.
