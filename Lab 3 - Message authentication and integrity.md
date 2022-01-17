@@ -79,3 +79,54 @@ for ctr in range(1, 11):
 
 	print(f'Message {key.decode():>45} {"OK" if is_authentic else "NOK":<6}')
 ```
+
+## Digital signatures using public-key cryptography
+
+U ovom izazovu treba odrediti autentičnu sliku (između dvije ponuđene) koju je profesor potpisao svojim privatnim ključem.
+Stvaramo novi file digital_signature.py.
+
+```python
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.primitives import hashes
+from cryptography.exceptions import InvalidSignature
+
+def load_public_key():
+    with open("public.pem", "rb") as f:
+        PUBLIC_KEY = serialization.load_pem_public_key(
+            f.read(),
+            backend=default_backend()
+        )
+    return PUBLIC_KEY
+
+def verify_signature_rsa(signature, message):
+    PUBLIC_KEY = load_public_key()
+    try:
+        PUBLIC_KEY.verify(
+            signature,
+            message,
+            padding.PSS(
+                mgf=padding.MGF1(hashes.SHA256()),
+                salt_length=padding.PSS.MAX_LENGTH
+            ),
+            hashes.SHA256()
+        )
+    except InvalidSignature:
+        return False
+    else:
+        return True
+
+#print(load_public_key())
+
+with open("image_2.sig", "rb") as file:
+    signature = file.read()
+
+with open("image_2.png", "rb") as file:
+    image = file.read()    
+
+is_authentic = verify_signature_rsa(signature, image)
+print(is_authentic)
+```
+Za autentifikaciju slike koristimo javni ključ koji dobivamo pomoću load_public_key. Funkcija verify_signature_rsa provjerava digitalnog potpisa. 
+Ako je potpis neispravan vraća False, inače vraća True. Za image_1.sig i image_1.png vraća False a za image_2.sig i image_2.png vraća True, dakle druga slika je autentična.
